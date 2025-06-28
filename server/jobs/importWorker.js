@@ -37,7 +37,7 @@ export const worker = new Worker('import-jobs', async (job) => {
   concurrency: parseInt(process.env.WORKER_CONCURRENCY || '5'),
 });
 
-// ✅ Graceful Shutdown
+//  Graceful Shutdown
 const shutdown = async () => {
   console.log('shutting down worker.');
   await worker.close();
