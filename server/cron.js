@@ -6,7 +6,7 @@ import { redisConnection } from './config/redis-connection.js'; // required for 
 const FEEDS = process.env.JOB_FEEDS?.split(',') || [];
 
 export const scheduleJob = () => {
-  cron.schedule('*0 * * * *', async () => {
+  cron.schedule('0 * * * *', async () => {
     console.log('⏰ Cron triggered');
 
     for (const url of FEEDS) {
