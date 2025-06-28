@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { connectDB } from './config/mongo.js';
 import { scheduleJob } from './cron.js';
+import { redisConnection } from './config/redis-connection.js';
 import importLogsRoute from './routes/importLogs.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import './jobs/importWorker.js';
@@ -10,6 +11,7 @@ import './jobs/importWorker.js';
 
 dotenv.config();
 const app = express();
+
 
 
 // Middleware setup
